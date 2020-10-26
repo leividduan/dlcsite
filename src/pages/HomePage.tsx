@@ -12,15 +12,15 @@ function HomePage(){
                 <p>Padawan Programmer</p>
             
                 <section className="grid grid-content">
-                    <a href="https://github.com/leividduan" className="item"> 
+                    <a href="https://github.com/leividduan" target="_blank" rel="noopener noreferrer" className="item"> 
                         <h3>GitHub</h3>
                         <p>Meu perfil do GitHub. Espero que goste! :) </p>
                     </a>
-                    <a href="https://www.linkedin.com/in/deivid-luan-c-08051811b/" className="item"> 
+                    <a href="https://www.linkedin.com/in/deivid-luan-c-08051811b/" target="_blank" rel="noopener noreferrer" className="item"> 
                         <h3>LinkedIn</h3>
                         <p>Meu perfil no LinkedIn.</p>
                     </a>
-                    <Link to="/about" style={{textDecoration: 'none'}} className="item"> 
+                    <Link to="/repositories" style={{textDecoration: 'none'}} className="item"> 
                         <h3>Repositórios</h3>
                         <p>Um overview sobre os meus repositórios.</p>
                     </Link>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function About(){
+function Repositories(){
     return(
         <div className="container-about">
             <h1>Hello World</h1>
@@ -9,4 +9,4 @@ function About(){
 }
 
 
-export default About
+export default Repositories
