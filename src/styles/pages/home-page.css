@@ -95,7 +95,7 @@
     }
     .grid-content{
         grid-template-rows: 100px 100px;
-        width: 780px;
+        width: 80vw;
     }
 }
 @media(max-width:700px){
