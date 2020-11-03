@@ -1,32 +1,38 @@
-import { config } from 'process';
-import React, { Component } from 'react';
-import api from '../services/apiGitHub';
+import React, { useEffect, useState } from 'react';
+import api from '../services/api';
+import '../styles/pages/repositories.css'
 
-class Repositories extends Component {
-  state = {
-    repos: []
-  }
+interface Repositories{
+  name : string,
+  html_url: string,
+  description: string
+}
 
-  async componentDidMount() {
-    const response = await api.get('');
-    this.setState({ repos: response.data })
-  }
+function Repositories() {
 
-  render() {
-    const { repos } = this.state;
-    console.log(repos)
+  const [repos, setRepos] = useState<Repositories[]>([])
+
+  useEffect(() => {
+      api.get('').then(response => {
+        setRepos(response.data);
+      })
+  }, []);
+
     return (
       <div className="container-repositories">
-          <section className="grid grid-content">
-            
-          {/* {repos.map( repos => {
-             <a href={repos.html_url} target="_blank" rel="noopener noreferrer" className="item"> 
-             </a>
-          })} */}
+          <section className="grid grid-content-repos">
+            {repos.map( repo =>{
+              return(
+              <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="item"> 
+                <h3>{repo.name}</h3>
+                <p>{repo.description}</p>
+              </a>
+              )
+            })}
           </section>
       </div>
     );
-  }
+  
 }
 
 export default Repositories

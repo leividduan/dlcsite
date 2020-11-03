@@ -15,7 +15,8 @@
     width: 150px;
     height: 150px;
     border-radius: 100px;
-    margin: 25px;
+    margin-bottom: 1.5em;
+    margin-top: 5em;
 }
 
 .header-content h1{
@@ -34,6 +35,7 @@
 .grid-content{
     grid-template-rows: 100px 100px;
     width: 800px;
+    margin-top: 3em;
 }
 .item{
     border: 1px solid rgb(0, 0, 0);
@@ -79,6 +81,7 @@
         height: 130px;
         border-radius: 100px;
         margin: 20px;
+        margin-top: 5em;
     }
 
     .header-content h1{
