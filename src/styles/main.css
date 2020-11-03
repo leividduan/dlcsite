@@ -3,12 +3,6 @@
     padding: 0;
 }
 
-.header-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 body{
     background-color: #FFF;
 }

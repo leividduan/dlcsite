@@ -1,7 +1,7 @@
 import React from 'react'
 import HomePage from './pages/HomePage'
 import Repositories from './pages/Repositories'
-import Info from './pages/Info'
+import Contact from './pages/Contact'
 import { BrowserRouter, Route, Switch} from 'react-router-dom'
 
 function Routes(){
@@ -14,8 +14,8 @@ function Routes(){
       <Route path="/repositories"> 
         <Repositories />
       </Route>
-      <Route path="/info"> 
-        <Info />
+      <Route path="/contact"> 
+        <Contact />
       </Route>
       
     </Switch>

@@ -24,6 +24,10 @@ function HomePage(){
                         <h3>Repositórios</h3>
                         <p>Um overview sobre os meus repositórios.</p>
                     </Link>
+                    <Link to="/contact" style={{textDecoration: 'none'}} className="item">
+                        <h3>Contato</h3>
+                        <p>Me envie uma mensagem ou e-mail.</p>
+                    </Link>
                 </section>
             </header>
       </div>
