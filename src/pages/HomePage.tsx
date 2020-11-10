@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Avatar from '../images/avatar.png'
 import { Link } from 'react-router-dom'
+import api from '../services/api'
 import '../styles/pages/home-page.css'
 
+interface Perfil{
+    bio : string,
+    avatar_url: string,
+  }
+
 function HomePage(){
+
+    const [perfil, setPerfil] = useState<Perfil>()
+
+    useEffect(() => {
+        api.get('https://api.github.com/users/leividduan').then(response => {
+          setPerfil(response.data);
+        })
+    });
+
     return(
         <div className="container">
             <header className="header-content">
-                <img src={Avatar} alt="Avatar"/>
+                <img src={perfil?.avatar_url} alt="Avatar"/>
                 <h1>Deivid Luan Cardoso</h1>
-                <p>Padawan Programmer</p>
+                <p>{perfil?.bio}</p>
             
                 <section className="grid grid-content">
                     <a href="https://github.com/leividduan" target="_blank" rel="noopener noreferrer" className="item"> 

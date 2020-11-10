@@ -9,6 +9,7 @@
   justify-content: center;
   width: 100vw;
   height: 100vh;
+  font-family: Source Code Pro;
 } 
 .email-form form{
   width: 50vw;
@@ -28,7 +29,7 @@
 .email-form input[type=text], select, textarea {
   width: 100%; 
   padding: 12px; 
-  border: 1px solid #ccc; 
+  border: 1px solid rgb(225, 6, 6); 
   border-radius: 4px; 
   box-sizing: border-box;
   margin-top: 0.5rem; 
@@ -37,7 +38,7 @@
 }
 
 .email-form input[type=submit] {
-  background-color: #9e2d2d;
+  background-color: rgb(225, 6, 6);
   color: white;
   padding: 12px 20px;
   border: none;
@@ -46,9 +47,22 @@
 }
 
 .email-form input[type=submit]:hover {
-  background-color: #701f1f;
+  background-color: rgb(148, 9, 9);
 }
 
-.email-form span{
-  display: block;
+.email-form textarea{
+  height: 15rem;
+}
+
+.email-form input[type=text], textarea:focus {
+  outline-color: rgb(148, 9, 9);
+}
+.email-form label{
+  color: rgb(148, 9, 9);
+}
+
+.email-form .error {
+  color: rgb(148, 9, 9);
+  display: inline;
+  margin-left: 1rem;
 }

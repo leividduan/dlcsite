@@ -19,16 +19,17 @@ function EmailForm(){
       <form onSubmit={handleSubmit(onSubmit)}>
 
         <label>Nome</label>
+        {errors.name && <span className="error">Campo obrigatório.</span>}
         <input type="text" id="name" name="name" ref={register({required:true})} placeholder="Olá, como é o seu nome?"/>
-        {errors.name && <span>Nome é um campo obrigatório.</span>}
 
         <label htmlFor="title">Título</label>
+        {errors.title && <span className="error">Campo obrigatório.</span>}
         <input type="text" id="title" name="title" ref={register({required:true})} placeholder="Digite um título"/>
-        {errors.title && <span>Título é um campo obrigatório.</span>}
 
         <label htmlFor="text">Texto</label>
-        <input type="text" id="text" name="text" ref={register({required:true})} placeholder="O que você deseja?"/>
-        {errors.text && <span>Texto é um campo obrigatório.</span>}
+        {errors.text && <span className="error">Campo obrigatório.</span>}
+        <textarea id="text" name="text" ref={register({required:true})} placeholder="O que você deseja?"/>
+        
 
         <input type="submit" value="Enviar" />
       </form>

@@ -13,7 +13,7 @@ function Repositories() {
   const [repos, setRepos] = useState<Repositories[]>([])
 
   useEffect(() => {
-      api.get('').then(response => {
+      api.get('https://api.github.com/users/leividduan/repos').then(response => {
         setRepos(response.data);
       })
   }, []);
