@@ -29,40 +29,43 @@
 .email-form input[type=text], select, textarea {
   width: 100%; 
   padding: 12px; 
-  border: 1px solid rgb(225, 6, 6); 
+  border: 1px solid rgb(0,0,0); 
   border-radius: 4px; 
   box-sizing: border-box;
   margin-top: 0.5rem; 
   margin-bottom: 1rem; 
-  resize: vertical 
+  resize: none;
+  transition: 0.2s;  
+  font-family: Source Code Pro;
 }
 
 .email-form input[type=submit] {
-  background-color: rgb(225, 6, 6);
+  background-color: rgb(0,0,0);
   color: white;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: 0.2s;  
 }
 
 .email-form input[type=submit]:hover {
-  background-color: rgb(148, 9, 9);
+  background-color: rgb(225, 6, 6);
+  
 }
 
 .email-form textarea{
   height: 15rem;
 }
 
-.email-form input[type=text], textarea:focus {
-  outline-color: rgb(148, 9, 9);
-}
-.email-form label{
-  color: rgb(148, 9, 9);
-}
-
 .email-form .error {
-  color: rgb(148, 9, 9);
+  color: rgb(225, 6, 6);
   display: inline;
   margin-left: 1rem;
+  transition: 1s;
+}
+
+.email-form input[type=text]::placeholder, textarea::placeholder{
+  font-family: Source Code Pro;
+  font-size: 0.7rem;
 }
