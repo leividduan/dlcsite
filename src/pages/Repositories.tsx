@@ -1,27 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import api from '../services/api';
-import '../styles/pages/repositories.css'
+import { GetStaticProps } from "next";
+import api from "../api/api";
+import { iRepositories } from '../interface/interfaces'
 
-interface Repositories{
-  name : string,
-  html_url: string,
-  description: string
-}
+function Repositories( props:iRepositories){
+  const repo = props.repo;
 
-function Repositories() {
-
-  const [repos, setRepos] = useState<Repositories[]>([])
-
-  useEffect(() => {
-      api.get('https://api.github.com/users/leividduan/repos').then(response => {
-        setRepos(response.data);
-      })
-  }, []);
-
-    return (
-      <div className="container-repositories">
-          <section className="grid grid-content-repos">
-            {repos.map( repo =>{
+  return(
+    <div>
+          <section>
+            {repo.map( repo =>{
               return(
               <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="item"> 
                 <h3>{repo.name}</h3>
@@ -31,8 +18,15 @@ function Repositories() {
             })}
           </section>
       </div>
-    );
-  
+  );
 }
 
-export default Repositories
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await api.get('https://api.github.com/users/leividduan/repos')
+  const repo = await response.data;
+  return {
+    props: { repo },
+  };
+}
+
+export default Repositories;
