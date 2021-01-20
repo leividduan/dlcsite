@@ -2,10 +2,6 @@ import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import { iPerfil } from '.././interface/interfaces'
 import api from '../api/api'
-import styled from 'styled-components'
-
-const HeaderContent = styled.div`
-`
 
 
 function Home( props:iPerfil ) {
