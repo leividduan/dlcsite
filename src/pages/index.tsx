@@ -2,6 +2,10 @@ import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import { iPerfil } from '.././interface/interfaces'
 import api from '../api/api'
+import styled from 'styled-components'
+
+const HeaderContent = styled.div`
+`
 
 
 function Home( props:iPerfil ) {
@@ -17,7 +21,7 @@ function Home( props:iPerfil ) {
                 <h3>GitHub</h3>
                 <p>Meu perfil do GitHub. Espero que goste! :) </p>
             </a>
-            <a href="https://www.linkedin.com/in/deivid-luan-c-08051811b/" target="_blank" rel="noopener noreferrer" className="item"> 
+            <a href="https://www.linkedin.com/in/leividduan/" target="_blank" rel="noopener noreferrer" className="item"> 
                 <h3>LinkedIn</h3>
                 <p>Meu perfil no LinkedIn.</p>
             </a>
@@ -35,7 +39,7 @@ function Home( props:iPerfil ) {
 
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await api.get('https://api.github.com/users/leividduan')
+  const response = await api.get('')
   const user = await response.data;
   return {
     props: { user },
